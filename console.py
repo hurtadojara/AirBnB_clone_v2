@@ -122,7 +122,7 @@ class HBNBCommand(cmd.Cmd):
             for parameters in tokens:
                 key_value.append(parameters.split("="))
                 if i > 0:
-                    if type(key_value[i][1]) is str: 
+                    if type(key_value[i][1]) is str:
                         key_value[i][1] = key_value[i][1].strip('"')
                 i += 1
             modelo = ''.join(key_value[0])
