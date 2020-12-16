@@ -14,7 +14,7 @@ class FileStorage:
             return FileStorage.__objects
         verificador = {}
         for key, value in self.__objects.items():
-            if cls in key:
+            if cls.__name__ in key:
                 verificador[key] = value
         return verificador
 
