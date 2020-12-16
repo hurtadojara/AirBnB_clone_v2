@@ -116,16 +116,16 @@ class HBNBCommand(cmd.Cmd):
     def do_create(self, args):
         """ Create an object of any class"""
         i = 0
-        key_value = []
+        k_val = []
         tokens = args.split(" ")
         if len(tokens) > 0:
             for parameters in tokens:
-                key_value.append(parameters.split("="))
+                k_val.append(parameters.split("="))
                 if i > 0:
-                    if type(key_value[i][1]) is str:
-                        key_value[i][1] = key_value[i][1].strip('"').replace("_", " ")
+                    if type(k_val[i][1]) is str:
+                        k_val[i][1] = k_val[i][1].strip('"').replace("_", " ")
                 i += 1
-            modelo = ''.join(key_value[0])
+            modelo = ''.join(k_val[0])
         if not args:
             print("** class name missing **")
             return
@@ -136,7 +136,7 @@ class HBNBCommand(cmd.Cmd):
         ''' setear el value '''
         if i > 1:
             for j in range(1, i):
-                setattr(new_instance, key_value[j][0], key_value[j][1])
+                setattr(new_instance, k_val[j][0], k_val[j][1])
         storage.save()
         print(new_instance.id)
         storage.save()
