@@ -123,7 +123,7 @@ class HBNBCommand(cmd.Cmd):
                 key_value.append(parameters.split("="))
                 if i > 0:
                     if type(key_value[i][1]) is str:
-                        key_value[i][1] = key_value[i][1].strip('"')
+                        key_value[i][1] = key_value[i][1].strip('"').replace("_", " ")
                 i += 1
             modelo = ''.join(key_value[0])
         if not args:
