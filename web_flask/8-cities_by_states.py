@@ -1,4 +1,3 @@
-
 #!/usr/bin/python3
 """Start a flask app"""
 from flask import Flask
